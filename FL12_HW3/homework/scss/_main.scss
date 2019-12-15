@@ -1,0 +1,278 @@
+
+body {
+  width:  1920px;
+  margin:0;
+  padding:0;
+  background-color: $bodyBgColor;
+  }
+
+  $position: ("rel":relative, "abs":absolute);
+
+  @mixin buttenStyle { 
+    border: none;
+    background-color: $headerButtonBgColor;
+    color: $headerButtonColor;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 3px;
+    width: 140px;
+    height: 50px;
+  }
+
+  @mixin loginStyle {
+    font-family: 'Source Sans Pro', sans-serif;
+      font-size: 20px;
+      color: #f2f3f8;
+      font-weight: 600;
+      margin-left: 150px;
+  }
+
+  @mixin linkStyle {
+      font-family: 'Hind', sans-serif;
+      color: #c0c3cc;
+  }
+
+    %logoSpan {
+        padding-top: 5px;
+        display: block;
+        line-height: 10px;
+        font-weight: 600;
+        font-size: 10px;
+    }
+
+.header{
+	background: $headerBgColor center center no-repeat;
+	background-size: 100%;
+	height: 720px; 
+	border-radius: 0% 0% 40% 50%/100% 60% 40% 0%;
+	.header-wrap {
+		margin-left: 200px;
+		padding-top: 50px;
+		.landing-logo {
+			display: flex;
+			img {
+       padding-right: 15px;
+       align-self: flex-start
+       }
+		
+      p {
+          font-family: "Hind";
+          font-size: 23px;
+          line-height: 30px;
+          font-weight: 600;
+          text-align: center;
+          margin: 0;
+          span {
+            @extend %logoSpan;
+          }
+        }
+    }
+    .header_text {
+    margin-top: 33px;
+    font-family: "Hind";
+    color: $headerTextColor;
+    letter-spacing: 0.01rem;
+    white-space: pre-line;
+    line-height: 1.6rem;
+  }
+			
+		
+	
+	}	
+}
+
+
+.header_heading{
+    font-family: 'Source Sans Pro', sans-serif;
+    position: map-get($position, "rel");
+    color: $hederHeadingTextColor;
+    z-index: 1;
+    font-size: 70px;
+    line-height: 74px;
+    font-weight: 700;
+    max-width: 780px;
+    margin-top: 70px;
+    letter-spacing: 0.02em;
+    
+    
+      &::after {
+      content: "awesome";
+      color: transparent;
+      background-color:$hederHeadingBgColor;
+      position: map-get($position, "abs");
+      left: 0px;
+      top: 95px;
+      z-index: -1;
+      line-height: 50px;
+    }
+ }
+
+
+.header_button { 
+    @include buttenStyle;
+  }
+
+  .login {
+    @include loginStyle;
+  }
+
+
+
+
+
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .section_text {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 43px;
+    font-weight: 600;
+    margin-top: 35px;
+    margin-bottom: 35px;
+    position: map-get($position, "rel");
+    &::after {
+      content: "adventure";
+      color: transparent;
+      background-color: $sectionTextbgColor;
+      position: map-get($position, "abs");
+      top: -5px;
+      right: 10px;
+      width: 192px;
+      height: 50px;
+      z-index: -1;
+    }
+  }
+  .section_card_wrap {
+    max-width: 1110px;
+    .section_card {
+      display: flex;
+      margin-bottom: 25px;
+      background-color: $sectionCardWrapBgColor;
+      padding: 20px;
+      border-radius: 3px;
+      .section_card_img {
+        width: 123%;
+        border-radius: 3px;
+      }
+    }
+  }
+      .section_card_right_container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 30px;
+        padding-right: 8%;
+        padding-left: 8%;
+      }
+       
+      .section_card_heading {
+        color:$sectionCardHeadingColor;
+        font-size: 25px;
+        font-weight: 600;
+        font-family: 'Source Sans Pro', sans-serif;
+      }
+      .section_card_text {
+        text-align: justify;
+        font-family: 'Hind', sans-serif;
+        color: #c0c3cc;
+      }
+      .section_link {
+        @include linkStyle;
+      }
+
+  .section_banner {
+  margin-top: 120px;
+  background-image: $bannerBgImage;
+  width: 1200px;
+  height: 145px;
+  border-radius: 3px;
+  padding-left: 160px;
+  padding-right: 160px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+    .section_banner_heading {
+    font-size: 30px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 700;
+    color: #2c2f39;
+    z-index: 1;
+    position: map-get($position, "rel");
+    margin-top: auto;
+    &::after {
+      content: "start";
+      color: transparent;
+      background-color: $SectionBannerHeadingBgColorAfter;
+      position: map-get($position, "abs");
+      line-height: 50px;
+      left: 120px;
+      top: -10px;
+      z-index: -1; 
+      }
+    }
+    .section_banner_text {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: $sectionBannerTextColor;
+    font-weight: 600;
+    }
+
+    .section_banner_button {
+      @include buttenStyle;
+    }
+  } 
+}          
+        
+         
+
+ .footer {
+ margin-top: -70px;
+ height: 250px;
+ color: #c0c3ce;
+ display: flex;
+ align-items: flex-end;
+ font-family: 'Hind', sans-serif;
+ background-color: $footerBgColor;
+ height: 250px;
+ color: #c0c3ce;
+  .footer-wrap {
+  max-width: 1540px;
+  margin-left: auto;
+  margin-right: auto;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 170px;
+      .footer_logo {
+      display: flex;
+       img {
+       padding-right: 15px;
+       align-self: flex-start;
+       }
+    
+      p {
+          font-family: 'Hind', sans-serif;
+          font-size: 23px;
+          line-height: 30px;
+          font-weight: 600;
+          text-align: center;
+          margin: 0;
+          span {
+            @extend %logoSpan;
+          }
+        }
+      }
+    .footer_text {
+     font-family: 'Hind', sans-serif;
+      width: 300px;
+     font-size: 14px;
+     line-height: 20px;
+     font-weight: 600;
+    }
+  }
+} 
+ 
+
